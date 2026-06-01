@@ -21,4 +21,11 @@ const confirmPurchase = (reservationCode, price) => {
   return { success: true, code: reservationCode };
 };
 
-export { reserveStock, confirmPurchase };
+const buyBook = (title) => {
+  const book = findBook(title);
+  const reservationCode = reserveStock(book);
+  const result = confirmPurchase(reservationCode, book.price);
+  return result;
+};
+
+export { reserveStock, confirmPurchase, buyBook };
