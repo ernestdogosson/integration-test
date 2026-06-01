@@ -21,4 +21,11 @@ const processPayment = (ticketNumber, amount) => {
   return true;
 };
 
-export { prepareOrder, processPayment };
+const orderDrink = (drinkType) => {
+  const drink = createDrink(drinkType);
+  const ticketNumber = prepareOrder(drink);
+  const paymentSuccess = processPayment(ticketNumber, drink.price);
+  return paymentSuccess;
+};
+
+export { prepareOrder, processPayment, orderDrink };
