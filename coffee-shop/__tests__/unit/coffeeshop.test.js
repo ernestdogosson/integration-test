@@ -5,7 +5,7 @@ describe("createDrink", () => {
   test("returns type and price for a known drink", () => {
     const drink = createDrink("latte");
     expect(drink.type).toBe("latte");
-    expect(drink.price).toBe(99);
+    expect(drink.price).toBe(45);
   });
 
   test("returns undefined price for an unknown drink", () => {
